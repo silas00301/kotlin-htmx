@@ -1,7 +1,6 @@
 pluginManagement {
     repositories {
         mavenCentral()
-        // add repositories:
         google()
         gradlePluginPortal()
         maven("https://maven.pkg.jetbrains.space/public/p/amper/amper")
@@ -11,9 +10,7 @@ pluginManagement {
 }
 
 plugins {
-    // apply the plugin:
     id("org.jetbrains.amper.settings.plugin").version("0.3.1")
     id("org.gradle.toolchains.foojay-resolver-convention") version("0.8.0")
 }
 rootProject.name = "kotlinx-htmx"
-

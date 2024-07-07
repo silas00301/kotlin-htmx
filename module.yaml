@@ -4,3 +4,10 @@ product:
     - linuxX64
     - jvm
     - mingwX64
+
+settings:
+  jvm:
+    target: 17
+  publishing:
+    group: dev.silash
+    version: 0.1.0
