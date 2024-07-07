@@ -1,0 +1,6 @@
+product:
+  type: lib
+  platforms:
+    - linuxX64
+    - jvm
+    - mingwX64
