@@ -1,6 +1,6 @@
 package dev.silash.kotlinHtmx.descriptors.attributes
 
-import dev.silash.kotlinHtmx.descriptors.interfaces.HxDescriptor
+import dev.silash.kotlinHtmx.descriptors.HxDescriptor
 
 class HxParams : HxDescriptor("hx-params") {
     fun all() {

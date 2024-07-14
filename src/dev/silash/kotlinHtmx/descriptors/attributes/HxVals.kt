@@ -1,6 +1,6 @@
 package dev.silash.kotlinHtmx.descriptors.attributes
 
-import dev.silash.kotlinHtmx.descriptors.interfaces.HxDescriptor
+import dev.silash.kotlinHtmx.descriptors.HxDescriptor
 
 class HxVals : HxDescriptor("hx-vals") {
     fun normal(strategy: HxValsMap.() -> Unit) {
@@ -16,6 +16,8 @@ class HxVals : HxDescriptor("hx-vals") {
         +"js:"
         normal(strategy)
     }
+
+    inline fun js(noinline strategy: HxValsMap.() -> Unit) = javaScript(strategy)
 
     class HxValsMap : HxDescriptor("hx-vals") {
         fun add(

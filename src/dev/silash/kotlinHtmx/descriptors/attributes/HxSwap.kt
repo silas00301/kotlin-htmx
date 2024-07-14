@@ -1,6 +1,7 @@
 package dev.silash.kotlinHtmx.descriptors.attributes
 
-import dev.silash.kotlinHtmx.descriptors.interfaces.HxDescriptor
+import dev.silash.kotlinHtmx.descriptors.HxDescriptor
+import dev.silash.kotlinHtmx.durations.models.HxDuration
 
 @Suppress("TooManyFunctions")
 class HxSwap : HxDescriptor("hx-swap") {
@@ -40,8 +41,12 @@ class HxSwap : HxDescriptor("hx-swap") {
         +"none"
     }
 
-    fun swap(time: String) {
+    fun swap(time: HxDuration) {
         +"swap:$time"
+    }
+
+    fun settle(time: HxDuration) {
+        +"settle:$time"
     }
 
     fun ignoreTitle() {

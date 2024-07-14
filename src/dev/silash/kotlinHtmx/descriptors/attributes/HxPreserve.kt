@@ -1,9 +1,5 @@
 package dev.silash.kotlinHtmx.descriptors.attributes
 
-import dev.silash.kotlinHtmx.descriptors.interfaces.HxDescriptor
+import dev.silash.kotlinHtmx.descriptors.HxDescriptor
 
-class HxPreserve(val option: String) : HxDescriptor("hx-preserve") {
-    init {
-        +option
-    }
-}
+class HxPreserve : HxDescriptor("hx-preserve")

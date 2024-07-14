@@ -1,9 +1,10 @@
 package dev.silash.kotlinHtmx.descriptors.attributes
 
-import dev.silash.kotlinHtmx.descriptors.interfaces.HxDescriptor
+import dev.silash.kotlinHtmx.descriptors.HxDescriptor
 
 class HxTarget : HxDescriptor("hx-target") {
-    fun thisElement() {
+    @Suppress("FunctionNaming", "ktlint:standard:function-naming")
+    fun `this`() {
         +"this"
     }
 

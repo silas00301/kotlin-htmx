@@ -1,6 +1,6 @@
 package dev.silash.kotlinHtmx.descriptors.attributes
 
-import dev.silash.kotlinHtmx.descriptors.interfaces.HxDescriptor
+import dev.silash.kotlinHtmx.descriptors.HxDescriptor
 
 class HxExt : HxDescriptor("hx-ext") {
     fun add(vararg extensions: String) {

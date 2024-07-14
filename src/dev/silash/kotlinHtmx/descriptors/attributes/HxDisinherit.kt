@@ -1,8 +1,8 @@
 package dev.silash.kotlinHtmx.descriptors.attributes
 
-import dev.silash.kotlinHtmx.HtmxAttributes
-import dev.silash.kotlinHtmx.descriptors.interfaces.HxDescriptor
-import dev.silash.kotlinHtmx.toHtmxAttribute
+import dev.silash.kotlinHtmx.descriptors.HxDescriptor
+import dev.silash.kotlinHtmx.enums.HtmxAttributes
+import dev.silash.kotlinHtmx.enums.toHtmxAttribute
 
 class HxDisinherit : HxDescriptor("hx-disinherit") {
     fun all() {

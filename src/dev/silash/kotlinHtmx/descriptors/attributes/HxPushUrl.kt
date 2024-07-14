@@ -1,6 +1,6 @@
 package dev.silash.kotlinHtmx.descriptors.attributes
 
-import dev.silash.kotlinHtmx.descriptors.interfaces.HxDescriptor
+import dev.silash.kotlinHtmx.descriptors.HxDescriptor
 
 class HxPushUrl : HxDescriptor("hx-push-url") {
     fun pushToHistory() {

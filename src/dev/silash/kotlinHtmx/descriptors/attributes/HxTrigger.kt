@@ -1,6 +1,7 @@
 package dev.silash.kotlinHtmx.descriptors.attributes
 
-import dev.silash.kotlinHtmx.descriptors.interfaces.HxDescriptor
+import dev.silash.kotlinHtmx.descriptors.HxDescriptor
+import dev.silash.kotlinHtmx.durations.models.HxDuration
 
 class HxTrigger : HxDescriptor("hx-trigger") {
     fun event(event: HxTriggerEvent.() -> Unit) {
@@ -10,7 +11,7 @@ class HxTrigger : HxDescriptor("hx-trigger") {
         +"$text,"
     }
 
-    fun every(timing: String) {
+    fun every(timing: HxDuration) {
         +"every $timing,"
     }
 
@@ -40,12 +41,12 @@ class HxTrigger : HxDescriptor("hx-trigger") {
                 +"changed"
             }
 
-            fun delay(delay: String) {
-                +"delay:$delay"
+            fun delay(timing: HxDuration) {
+                +"delay:$timing"
             }
 
-            fun throttle(throttle: String) {
-                +"throttle:$throttle"
+            fun throttle(timing: HxDuration) {
+                +"throttle:$timing"
             }
 
             fun from(from: HxTarget.() -> Unit) {

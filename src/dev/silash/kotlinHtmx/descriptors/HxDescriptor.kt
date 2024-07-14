@@ -1,4 +1,4 @@
-package dev.silash.kotlinHtmx.descriptors.interfaces
+package dev.silash.kotlinHtmx.descriptors
 
 abstract class HxDescriptor(var attributeName: String) {
     var text: String = ""

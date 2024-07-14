@@ -1,5 +1,6 @@
 package dev.silash.kotlinHtmx
 
+import dev.silash.kotlinHtmx.descriptors.HxDescriptor
 import dev.silash.kotlinHtmx.descriptors.attributes.HxBoost
 import dev.silash.kotlinHtmx.descriptors.attributes.HxConfirm
 import dev.silash.kotlinHtmx.descriptors.attributes.HxDisable
@@ -31,34 +32,18 @@ import dev.silash.kotlinHtmx.descriptors.attributes.httpMethods.HxGet
 import dev.silash.kotlinHtmx.descriptors.attributes.httpMethods.HxPatch
 import dev.silash.kotlinHtmx.descriptors.attributes.httpMethods.HxPost
 import dev.silash.kotlinHtmx.descriptors.attributes.httpMethods.HxPut
-import dev.silash.kotlinHtmx.descriptors.interfaces.HxDescriptor
 
 @Suppress("TooManyFunctions")
 class HtmxMethods(private val map: MutableMap<String, String>) {
-    fun get(
-        url: String,
-        lambda: HxGet.() -> Unit = {},
-    ) = addEntry(HxGet(url), lambda)
+    fun get(url: String) = addEntry(HxGet(url))
 
-    fun post(
-        url: String,
-        lambda: HxPost.() -> Unit = {},
-    ) = addEntry(HxPost(url), lambda)
+    fun post(url: String) = addEntry(HxPost(url))
 
-    fun put(
-        url: String,
-        lambda: HxPut.() -> Unit = {},
-    ) = addEntry(HxPut(url), lambda)
+    fun put(url: String) = addEntry(HxPut(url))
 
-    fun delete(
-        url: String,
-        lambda: HxDelete.() -> Unit = {},
-    ) = addEntry(HxDelete(url), lambda)
+    fun delete(url: String) = addEntry(HxDelete(url))
 
-    fun patch(
-        url: String,
-        lambda: HxPatch.() -> Unit = {},
-    ) = addEntry(HxPatch(url), lambda)
+    fun patch(url: String) = addEntry(HxPatch(url))
 
     fun include(lambda: HxInclude.() -> Unit) = addEntry(HxInclude(), lambda)
 
@@ -80,42 +65,27 @@ class HtmxMethods(private val map: MutableMap<String, String>) {
 
     fun selectOob(lambda: HxSelectOob.() -> Unit) = addEntry(HxSelectOob(), lambda)
 
-    fun preserve(
-        option: String = "",
-        lambda: HxPreserve.() -> Unit = {},
-    ) = addEntry(HxPreserve(option), lambda)
+    fun preserve() = addEntry(HxPreserve())
 
     fun params(lambda: HxParams.() -> Unit) = addEntry(HxParams(), lambda)
 
-    fun encoding(
-        encodingOptions: HxEncodingOptions,
-        lambda: HxEncoding.() -> Unit = {},
-    ) = addEntry(HxEncoding(encodingOptions), lambda)
+    fun encoding(encodingOptions: HxEncodingOptions) = addEntry(HxEncoding(encodingOptions))
 
     fun vals(lambda: HxVals.() -> Unit) = addEntry(HxVals(), lambda)
 
-    fun confirm(
-        message: String,
-        lambda: HxConfirm.() -> Unit = {},
-    ) = addEntry(HxConfirm(message), lambda)
+    fun confirm(message: String) = addEntry(HxConfirm(message))
 
     fun disinherit(lambda: HxDisinherit.() -> Unit) = addEntry(HxDisinherit(), lambda)
 
     fun inherit(lambda: HxInherit.() -> Unit) = addEntry(HxInherit(), lambda)
 
-    fun boost(
-        enabled: Boolean,
-        lambda: HxBoost.() -> Unit = {},
-    ) = addEntry(HxBoost(enabled), lambda)
+    fun boost(enabled: Boolean) = addEntry(HxBoost(enabled))
 
     fun pushUrl(lambda: HxPushUrl.() -> Unit) = addEntry(HxPushUrl(), lambda)
 
     fun historyElt(lambda: HxHistoryElt.() -> Unit = {}) = addEntry(HxHistoryElt(), lambda)
 
-    fun history(
-        enabled: Boolean,
-        lambda: HxHistory.() -> Unit = {},
-    ) = addEntry(HxHistory(enabled), lambda)
+    fun history(enabled: Boolean) = addEntry(HxHistory(enabled))
 
     fun validate(lambda: HxValidate.() -> Unit = {}) = addEntry(HxValidate(), lambda)
 
@@ -131,7 +101,7 @@ class HtmxMethods(private val map: MutableMap<String, String>) {
 
     private fun <T : HxDescriptor> addEntry(
         instance: T,
-        lambda: T.() -> Unit,
+        lambda: T.() -> Unit = {},
     ) {
         val key = instance.attributeName
         instance.lambda()
