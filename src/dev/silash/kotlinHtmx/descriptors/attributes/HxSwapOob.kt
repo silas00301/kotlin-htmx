@@ -1,6 +1,7 @@
 package dev.silash.kotlinHtmx.descriptors.attributes
 
 import dev.silash.kotlinHtmx.descriptors.HxDescriptor
+import dev.silash.kotlinHtmx.utils.generateWhereSelector
 
 class HxSwapOob : HxDescriptor("hx-swap-oob") {
     fun trueSwap() {
@@ -18,11 +19,13 @@ class HxSwapOob : HxDescriptor("hx-swap-oob") {
             +selector
         }
 
-        fun where(selector: Pair<String, String>): String {
+        fun where(selector: Pair<String, String>) {
             val (key, value) = selector
-            return "[$key='$value']"
+            +generateWhereSelector("$key='$value'")
         }
 
-        infix fun String.equalTo(selector: String) = Pair(this, selector)
+        fun where(selector: String) {
+            +generateWhereSelector(selector)
+        }
     }
 }

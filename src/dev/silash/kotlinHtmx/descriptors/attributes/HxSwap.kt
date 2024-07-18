@@ -67,8 +67,7 @@ class HxSwap : HxDescriptor("hx-swap") {
     }
 
     fun focusShow(enabled: Boolean) {
-        val enabledName = if (enabled) "true" else "false"
-        +"focus-show:$enabledName"
+        +"focus-show:$enabled"
     }
 
     enum class HxShowDirection {

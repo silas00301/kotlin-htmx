@@ -13,9 +13,3 @@ sealed interface HxDuration {
 
     operator fun component2(): HxDurationUnit = unit
 }
-
-fun test() {
-    val duration: HxDuration = 100.ms
-    val (amount, unit) = duration
-    println("$amount $unit")
-}

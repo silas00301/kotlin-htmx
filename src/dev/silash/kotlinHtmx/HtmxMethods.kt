@@ -34,7 +34,7 @@ import dev.silash.kotlinHtmx.descriptors.attributes.httpMethods.HxPost
 import dev.silash.kotlinHtmx.descriptors.attributes.httpMethods.HxPut
 
 @Suppress("TooManyFunctions")
-class HtmxMethods(private val map: MutableMap<String, String>) {
+class HtmxMethods(val map: MutableMap<String, String>) {
     fun get(url: String) = addEntry(HxGet(url))
 
     fun post(url: String) = addEntry(HxPost(url))
@@ -83,7 +83,7 @@ class HtmxMethods(private val map: MutableMap<String, String>) {
 
     fun pushUrl(lambda: HxPushUrl.() -> Unit) = addEntry(HxPushUrl(), lambda)
 
-    fun historyElt(lambda: HxHistoryElt.() -> Unit = {}) = addEntry(HxHistoryElt(), lambda)
+    fun historyElt() = addEntry(HxHistoryElt())
 
     fun history(enabled: Boolean) = addEntry(HxHistory(enabled))
 
@@ -97,9 +97,9 @@ class HtmxMethods(private val map: MutableMap<String, String>) {
 
     fun ext(lambda: HxExt.() -> Unit) = addEntry(HxExt(), lambda)
 
-    fun disable(lambda: HxDisable.() -> Unit = {}) = addEntry(HxDisable(), lambda)
+    fun disable() = addEntry(HxDisable())
 
-    private fun <T : HxDescriptor> addEntry(
+    inline fun <T : HxDescriptor> addEntry(
         instance: T,
         lambda: T.() -> Unit = {},
     ) {

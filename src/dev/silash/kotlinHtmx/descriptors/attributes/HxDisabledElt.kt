@@ -1,9 +1,11 @@
 package dev.silash.kotlinHtmx.descriptors.attributes
 
 import dev.silash.kotlinHtmx.descriptors.HxDescriptor
+import dev.silash.kotlinHtmx.utils.generateWhereSelector
 
 class HxDisabledElt : HxDescriptor("hx-disabled-elt") {
-    fun thisElement() {
+    @Suppress("FunctionNaming", "ktlint:standard:function-naming")
+    fun `this`() {
         +"this"
     }
 
@@ -15,26 +17,20 @@ class HxDisabledElt : HxDescriptor("hx-disabled-elt") {
         +"find $selector"
     }
 
-    fun next() {
-        +"next"
-    }
-
-    fun next(selector: String? = null) {
+    fun next(selector: String = "") {
         +"next $selector"
     }
 
-    fun previous() {
-        +"previous"
-    }
-
-    fun previous(selector: String? = null) {
+    fun previous(selector: String = "") {
         +"previous $selector"
     }
 
     fun where(selector: Pair<String, String>) {
         val (key, value) = selector
-        +"[$key='$value']"
+        +generateWhereSelector("$key='$value'")
     }
 
-    infix fun String.equalTo(selector: String) = Pair(this, selector)
+    fun where(selector: String) {
+        +generateWhereSelector(selector)
+    }
 }

@@ -17,7 +17,7 @@ class HxVals : HxDescriptor("hx-vals") {
         normal(strategy)
     }
 
-    inline fun js(noinline strategy: HxValsMap.() -> Unit) = javaScript(strategy)
+    fun js(strategy: HxValsMap.() -> Unit) = javaScript(strategy)
 
     class HxValsMap : HxDescriptor("hx-vals") {
         fun add(

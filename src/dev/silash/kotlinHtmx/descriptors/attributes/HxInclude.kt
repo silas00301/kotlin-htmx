@@ -1,6 +1,7 @@
 package dev.silash.kotlinHtmx.descriptors.attributes
 
 import dev.silash.kotlinHtmx.descriptors.HxDescriptor
+import dev.silash.kotlinHtmx.utils.generateWhereSelector
 
 class HxInclude : HxDescriptor("hx-include") {
     @Suppress("FunctionNaming", "ktlint:standard:function-naming")
@@ -34,8 +35,10 @@ class HxInclude : HxDescriptor("hx-include") {
 
     fun where(selector: Pair<String, String>) {
         val (key, value) = selector
-        +"[$key='$value']"
+        +generateWhereSelector("$key='$value'")
     }
 
-    infix fun String.equalTo(selector: String) = Pair(this, selector)
+    fun where(selector: String) {
+        +generateWhereSelector(selector)
+    }
 }

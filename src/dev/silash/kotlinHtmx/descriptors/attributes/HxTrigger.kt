@@ -107,7 +107,10 @@ class HxTrigger : HxDescriptor("hx-trigger") {
                     +"root:$text"
                 }
 
-                fun threshold(threshold: String) {
+                fun threshold(threshold: Double) {
+                    require(threshold in 0.0..1.0) {
+                        "Threshold must be between 0.0 and 1.0"
+                    }
                     +"threshold:$threshold"
                 }
 

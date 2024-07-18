@@ -8,6 +8,9 @@ product:
 settings:
   jvm:
     target: 17
+  kotlin:
+    languageFeatures:
+      - contextReceivers
   publishing:
     group: dev.silash
     version: 0.1.0
