@@ -1,8 +1,8 @@
 package dev.silash.kotlinHtmx.utils
 
-import dev.silash.kotlinHtmx.descriptors.HxDescriptor
+import dev.silash.kotlinHtmx.attributes.HtmlAttribute
 
-context(HxDescriptor)
+context(HtmlAttribute)
 fun generateWhereSelector(selector: String): String {
     require(
         selector.count {
