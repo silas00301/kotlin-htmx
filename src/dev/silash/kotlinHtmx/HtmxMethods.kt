@@ -1,37 +1,37 @@
 package dev.silash.kotlinHtmx
 
-import dev.silash.kotlinHtmx.descriptors.HxDescriptor
-import dev.silash.kotlinHtmx.descriptors.attributes.HxBoost
-import dev.silash.kotlinHtmx.descriptors.attributes.HxConfirm
-import dev.silash.kotlinHtmx.descriptors.attributes.HxDisable
-import dev.silash.kotlinHtmx.descriptors.attributes.HxDisabledElt
-import dev.silash.kotlinHtmx.descriptors.attributes.HxDisinherit
-import dev.silash.kotlinHtmx.descriptors.attributes.HxEncoding
-import dev.silash.kotlinHtmx.descriptors.attributes.HxEncodingOptions
-import dev.silash.kotlinHtmx.descriptors.attributes.HxExt
-import dev.silash.kotlinHtmx.descriptors.attributes.HxHistory
-import dev.silash.kotlinHtmx.descriptors.attributes.HxHistoryElt
-import dev.silash.kotlinHtmx.descriptors.attributes.HxInclude
-import dev.silash.kotlinHtmx.descriptors.attributes.HxIndicator
-import dev.silash.kotlinHtmx.descriptors.attributes.HxInherit
-import dev.silash.kotlinHtmx.descriptors.attributes.HxOn
-import dev.silash.kotlinHtmx.descriptors.attributes.HxParams
-import dev.silash.kotlinHtmx.descriptors.attributes.HxPreserve
-import dev.silash.kotlinHtmx.descriptors.attributes.HxPushUrl
-import dev.silash.kotlinHtmx.descriptors.attributes.HxSelect
-import dev.silash.kotlinHtmx.descriptors.attributes.HxSelectOob
-import dev.silash.kotlinHtmx.descriptors.attributes.HxSwap
-import dev.silash.kotlinHtmx.descriptors.attributes.HxSwapOob
-import dev.silash.kotlinHtmx.descriptors.attributes.HxSync
-import dev.silash.kotlinHtmx.descriptors.attributes.HxTarget
-import dev.silash.kotlinHtmx.descriptors.attributes.HxTrigger
-import dev.silash.kotlinHtmx.descriptors.attributes.HxValidate
-import dev.silash.kotlinHtmx.descriptors.attributes.HxVals
-import dev.silash.kotlinHtmx.descriptors.attributes.httpMethods.HxDelete
-import dev.silash.kotlinHtmx.descriptors.attributes.httpMethods.HxGet
-import dev.silash.kotlinHtmx.descriptors.attributes.httpMethods.HxPatch
-import dev.silash.kotlinHtmx.descriptors.attributes.httpMethods.HxPost
-import dev.silash.kotlinHtmx.descriptors.attributes.httpMethods.HxPut
+import dev.silash.kotlinHtmx.attributes.HtmlAttribute
+import dev.silash.kotlinHtmx.attributes.htmx.HxBoost
+import dev.silash.kotlinHtmx.attributes.htmx.HxConfirm
+import dev.silash.kotlinHtmx.attributes.htmx.HxDisable
+import dev.silash.kotlinHtmx.attributes.htmx.HxDisabledElt
+import dev.silash.kotlinHtmx.attributes.htmx.HxDisinherit
+import dev.silash.kotlinHtmx.attributes.htmx.HxEncoding
+import dev.silash.kotlinHtmx.attributes.htmx.HxEncodingOptions
+import dev.silash.kotlinHtmx.attributes.htmx.HxExt
+import dev.silash.kotlinHtmx.attributes.htmx.HxHistory
+import dev.silash.kotlinHtmx.attributes.htmx.HxHistoryElt
+import dev.silash.kotlinHtmx.attributes.htmx.HxInclude
+import dev.silash.kotlinHtmx.attributes.htmx.HxIndicator
+import dev.silash.kotlinHtmx.attributes.htmx.HxInherit
+import dev.silash.kotlinHtmx.attributes.htmx.HxOn
+import dev.silash.kotlinHtmx.attributes.htmx.HxParams
+import dev.silash.kotlinHtmx.attributes.htmx.HxPreserve
+import dev.silash.kotlinHtmx.attributes.htmx.HxPushUrl
+import dev.silash.kotlinHtmx.attributes.htmx.HxSelect
+import dev.silash.kotlinHtmx.attributes.htmx.HxSelectOob
+import dev.silash.kotlinHtmx.attributes.htmx.HxSwap
+import dev.silash.kotlinHtmx.attributes.htmx.HxSwapOob
+import dev.silash.kotlinHtmx.attributes.htmx.HxSync
+import dev.silash.kotlinHtmx.attributes.htmx.HxTarget
+import dev.silash.kotlinHtmx.attributes.htmx.HxTrigger
+import dev.silash.kotlinHtmx.attributes.htmx.HxValidate
+import dev.silash.kotlinHtmx.attributes.htmx.HxVals
+import dev.silash.kotlinHtmx.attributes.htmx.httpMethods.HxDelete
+import dev.silash.kotlinHtmx.attributes.htmx.httpMethods.HxGet
+import dev.silash.kotlinHtmx.attributes.htmx.httpMethods.HxPatch
+import dev.silash.kotlinHtmx.attributes.htmx.httpMethods.HxPost
+import dev.silash.kotlinHtmx.attributes.htmx.httpMethods.HxPut
 
 @Suppress("TooManyFunctions")
 class HtmxMethods(val map: MutableMap<String, String>) {
@@ -99,13 +99,13 @@ class HtmxMethods(val map: MutableMap<String, String>) {
 
     fun disable() = addEntry(HxDisable())
 
-    inline fun <T : HxDescriptor> addEntry(
+    inline fun <T : HtmlAttribute> addEntry(
         instance: T,
         lambda: T.() -> Unit = {},
     ) {
         val key = instance.attributeName
         instance.lambda()
-        val text = instance.text.trimStart().trimEnd(' ', ',')
+        val text = instance.attributeText.trimStart().trimEnd(' ', ',')
         map[key] = text
     }
 }

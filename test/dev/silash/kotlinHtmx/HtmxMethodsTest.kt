@@ -1,15 +1,13 @@
 package dev.silash.kotlinHtmx
 
-import dev.silash.kotlinHtmx.descriptors.attributes.HxEncodingOptions.MULTIPART_FORM_DATA
-import dev.silash.kotlinHtmx.descriptors.attributes.HxSwap.HxScrollDirection
-import dev.silash.kotlinHtmx.descriptors.attributes.HxSwap.HxShowDirection
-import dev.silash.kotlinHtmx.descriptors.attributes.HxSync
-import dev.silash.kotlinHtmx.descriptors.attributes.HxTrigger.HxTriggerEvent.EventModifiers.QueueOptions.ALL
-import dev.silash.kotlinHtmx.descriptors.attributes.HxTrigger.HxTriggerEvent.EventModifiers.QueueOptions.FIRST
-import dev.silash.kotlinHtmx.descriptors.attributes.HxTrigger.HxTriggerEvent.EventModifiers.QueueOptions.LAST
-import dev.silash.kotlinHtmx.descriptors.attributes.HxTrigger.HxTriggerEvent.EventModifiers.QueueOptions.NONE
-import dev.silash.kotlinHtmx.durations.models.ms
-import dev.silash.kotlinHtmx.durations.models.s
+import dev.silash.kotlinHtmx.attributes.htmx.HxEncodingOptions.MULTIPART_FORM_DATA
+import dev.silash.kotlinHtmx.attributes.htmx.HxSwap.HxScrollDirection
+import dev.silash.kotlinHtmx.attributes.htmx.HxSwap.HxShowDirection
+import dev.silash.kotlinHtmx.attributes.htmx.HxSync
+import dev.silash.kotlinHtmx.attributes.htmx.HxTrigger.HxTriggerEvent.EventModifiers.QueueOptions.ALL
+import dev.silash.kotlinHtmx.attributes.htmx.HxTrigger.HxTriggerEvent.EventModifiers.QueueOptions.FIRST
+import dev.silash.kotlinHtmx.attributes.htmx.HxTrigger.HxTriggerEvent.EventModifiers.QueueOptions.LAST
+import dev.silash.kotlinHtmx.attributes.htmx.HxTrigger.HxTriggerEvent.EventModifiers.QueueOptions.NONE
 import dev.silash.kotlinHtmx.enums.HtmxAttributes.DISINHERIT
 import dev.silash.kotlinHtmx.enums.HtmxAttributes.HISTORY
 import dev.silash.kotlinHtmx.enums.HtmxAttributes.ON
@@ -18,6 +16,8 @@ import dev.silash.testingUtils.assertIsEqualTo
 import kotlin.test.AfterTest
 import kotlin.test.Test
 import kotlin.test.assertFailsWith
+import kotlin.time.Duration.Companion.milliseconds
+import kotlin.time.Duration.Companion.seconds
 
 class HtmxMethodsTest {
     private val map = mutableMapOf<String, String>()
@@ -93,6 +93,7 @@ class HtmxMethodsTest {
                         append("next div ")
                         append("previous ")
                         append("previous div ")
+                        append("[id='example'] ")
                         append("[id='example']")
                     },
             )
@@ -106,6 +107,7 @@ class HtmxMethodsTest {
             previous()
             previous("div")
             where("id" to "example")
+            where("id='example'")
         }
 
         map assertIsEqualTo expected
@@ -126,11 +128,12 @@ class HtmxMethodsTest {
                         append("afterend ")
                         append("delete ")
                         append("none ")
-                        append("swap:1s ")
+                        append("swap:1000ms ")
                         append("settle:1ms ")
                         append("ignoreTitle ")
                         append("scroll:top ")
                         append("show:top:div ")
+                        append("show:bottom ")
                         append("focus-show:true")
                     },
             )
@@ -145,11 +148,12 @@ class HtmxMethodsTest {
             afterEnd()
             delete()
             none()
-            swap(1.s)
-            settle(1.ms)
+            swap(1.seconds)
+            settle(1.milliseconds)
             ignoreTitle()
             scroll(HxScrollDirection.TOP)
             show("div", HxShowDirection.TOP)
+            show(direction = HxShowDirection.BOTTOM)
             focusShow(true)
         }
 
@@ -170,6 +174,7 @@ class HtmxMethodsTest {
                         append("next div ")
                         append("previous ")
                         append("previous div ")
+                        append("[id='example'] ")
                         append("[id='example']")
                     },
             )
@@ -183,6 +188,7 @@ class HtmxMethodsTest {
             previous()
             previous("div")
             where("id" to "example")
+            where("id='example'")
         }
 
         map assertIsEqualTo expected
@@ -231,8 +237,8 @@ class HtmxMethodsTest {
                         append("[test] ")
                         append("once ")
                         append("changed ")
-                        append("delay:1s ")
-                        append("throttle:1s ")
+                        append("delay:1000ms ")
+                        append("throttle:1000ms ")
                         append("from:this ")
                         append("target:this ")
                         append("consume ")
@@ -246,7 +252,7 @@ class HtmxMethodsTest {
                         append("intersect root:this ")
                         append("threshold:0.5 ")
                         append("once, ")
-                        append("every 1s")
+                        append("every 1000ms")
                     },
             )
 
@@ -257,8 +263,8 @@ class HtmxMethodsTest {
                 modifiers {
                     once()
                     changed()
-                    delay(1.s)
-                    throttle(1.s)
+                    delay(1000.milliseconds)
+                    throttle(1.seconds)
                     from { `this`() }
                     target { `this`() }
                     consume()
@@ -276,7 +282,7 @@ class HtmxMethodsTest {
                     }
                 }
             }
-            every(1.s)
+            every(1.seconds)
         }
 
         map assertIsEqualTo expected
@@ -339,6 +345,7 @@ class HtmxMethodsTest {
                 "hx-indicator" to
                     buildString {
                         append("closest div ")
+                        append("[id='example'] ")
                         append("[id='example']")
                     },
             )
@@ -346,6 +353,7 @@ class HtmxMethodsTest {
         cut.indicator {
             closest("div")
             where("id" to "example")
+            where("id='example'")
         }
 
         map assertIsEqualTo expected
@@ -486,7 +494,7 @@ class HtmxMethodsTest {
                         append("} ")
                         append("js:{ ")
                         append("key1: value1 ")
-                        append("} ")
+                        append("} , ")
                         append("js:{ ")
                         append("key1: value1 ")
                         append("}")
@@ -496,6 +504,7 @@ class HtmxMethodsTest {
         cut.vals {
             normal { add("key1", "value1") }
             js { add("key1", "value1") }
+            +","
             javaScript { add("key1", "value1") }
         }
 
@@ -634,6 +643,15 @@ class HtmxMethodsTest {
         }
 
         map assertIsEqualTo expected
+    }
+
+    @Test
+    fun `on should require either event or htmxEvent`() {
+        assertFailsWith<IllegalArgumentException> {
+            cut.on {
+                execute("console.log('Hello World!')")
+            }
+        }
     }
 
     @Test
