@@ -8,10 +8,42 @@ import dev.silash.kotlinHtmx.attributes.htmx.HxTrigger.HxTriggerEvent.EventModif
 import dev.silash.kotlinHtmx.attributes.htmx.HxTrigger.HxTriggerEvent.EventModifiers.QueueOptions.FIRST
 import dev.silash.kotlinHtmx.attributes.htmx.HxTrigger.HxTriggerEvent.EventModifiers.QueueOptions.LAST
 import dev.silash.kotlinHtmx.attributes.htmx.HxTrigger.HxTriggerEvent.EventModifiers.QueueOptions.NONE
+import dev.silash.kotlinHtmx.attributes.htmx.boost
+import dev.silash.kotlinHtmx.attributes.htmx.confirm
+import dev.silash.kotlinHtmx.attributes.htmx.disable
+import dev.silash.kotlinHtmx.attributes.htmx.disabledElt
+import dev.silash.kotlinHtmx.attributes.htmx.disinherit
+import dev.silash.kotlinHtmx.attributes.htmx.encoding
+import dev.silash.kotlinHtmx.attributes.htmx.ext
+import dev.silash.kotlinHtmx.attributes.htmx.history
+import dev.silash.kotlinHtmx.attributes.htmx.historyElt
+import dev.silash.kotlinHtmx.attributes.htmx.httpMethods.delete
+import dev.silash.kotlinHtmx.attributes.htmx.httpMethods.get
+import dev.silash.kotlinHtmx.attributes.htmx.httpMethods.patch
+import dev.silash.kotlinHtmx.attributes.htmx.httpMethods.post
+import dev.silash.kotlinHtmx.attributes.htmx.httpMethods.put
+import dev.silash.kotlinHtmx.attributes.htmx.include
+import dev.silash.kotlinHtmx.attributes.htmx.indicator
+import dev.silash.kotlinHtmx.attributes.htmx.inherit
+import dev.silash.kotlinHtmx.attributes.htmx.on
+import dev.silash.kotlinHtmx.attributes.htmx.params
+import dev.silash.kotlinHtmx.attributes.htmx.preserve
+import dev.silash.kotlinHtmx.attributes.htmx.pushUrl
+import dev.silash.kotlinHtmx.attributes.htmx.select
+import dev.silash.kotlinHtmx.attributes.htmx.selectOob
+import dev.silash.kotlinHtmx.attributes.htmx.swap
+import dev.silash.kotlinHtmx.attributes.htmx.swapOob
+import dev.silash.kotlinHtmx.attributes.htmx.sync
+import dev.silash.kotlinHtmx.attributes.htmx.target
+import dev.silash.kotlinHtmx.attributes.htmx.trigger
+import dev.silash.kotlinHtmx.attributes.htmx.validate
+import dev.silash.kotlinHtmx.attributes.htmx.vals
 import dev.silash.kotlinHtmx.enums.HtmxAttributes.DISINHERIT
 import dev.silash.kotlinHtmx.enums.HtmxAttributes.HISTORY
 import dev.silash.kotlinHtmx.enums.HtmxAttributes.ON
 import dev.silash.kotlinHtmx.enums.HtmxAttributes.SELECT
+import dev.silash.kotlinHtmx.events.HtmxEvent
+import dev.silash.kotlinHtmx.events.StandardEvent
 import dev.silash.testingUtils.assertIsEqualTo
 import kotlin.test.AfterTest
 import kotlin.test.Test
@@ -635,23 +667,14 @@ class HtmxMethodsTest {
                     },
             )
 
-        cut.on(htmxEvent = "click") {
+        cut.on(HtmxEvent("click")) {
             execute("console.log('Hello World!')")
         }
-        cut.on(event = "test") {
+        cut.on(StandardEvent("test")) {
             execute("console.log('Hello World!')")
         }
 
         map assertIsEqualTo expected
-    }
-
-    @Test
-    fun `on should require either event or htmxEvent`() {
-        assertFailsWith<IllegalArgumentException> {
-            cut.on {
-                execute("console.log('Hello World!')")
-            }
-        }
     }
 
     @Test

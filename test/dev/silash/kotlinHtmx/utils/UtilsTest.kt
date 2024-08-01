@@ -34,4 +34,58 @@ class UtilsTest {
             }
         }
     }
+
+    @Test
+    fun `String contains uppercase should return true if String contains uppercase characters`() {
+        val expected = true
+
+        val actual = "Hello".containsUpperCase()
+
+        actual assertIsEqualTo expected
+    }
+
+    @Test
+    fun `String contains uppercase should return false if String does not contain uppercase characters`() {
+        val expected = false
+
+        val actual = "hello".containsUpperCase()
+
+        actual assertIsEqualTo expected
+    }
+
+    @Test
+    fun `String contains uppercase should return false if String is empty`() {
+        val expected = false
+
+        val actual = "".containsUpperCase()
+
+        actual assertIsEqualTo expected
+    }
+
+    @Test
+    fun `String contains lowercase should return true if String contains lowercase characters`() {
+        val expected = true
+
+        val actual = "hello".containsLowerCase()
+
+        actual assertIsEqualTo expected
+    }
+
+    @Test
+    fun `String contains lowercase should return false if String does not contain lowercase characters`() {
+        val expected = false
+
+        val actual = "HELLO".containsLowerCase()
+
+        actual assertIsEqualTo expected
+    }
+
+    @Test
+    fun `String contains lowercase should return false if String is empty`() {
+        val expected = false
+
+        val actual = "".containsLowerCase()
+
+        actual assertIsEqualTo expected
+    }
 }

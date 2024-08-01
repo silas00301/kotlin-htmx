@@ -1,15 +1,17 @@
 package dev.silash.kotlinHtmx.attributes.htmx
 
+import dev.silash.kotlinHtmx.HtmxMethods
 import dev.silash.kotlinHtmx.attributes.HtmlAttribute
 import dev.silash.kotlinHtmx.enums.HtmxAttributes
 import dev.silash.kotlinHtmx.enums.attributeName
 
 class HxDisinherit : HtmlAttribute("hx-disinherit") {
-    fun all() {
-        +"*"
-    }
+    fun all() = +"*"
 
-    fun select(vararg attribute: HtmxAttributes) {
-        +attribute.joinToString(" ") { it.attributeName }
-    }
+    fun select(vararg attribute: HtmxAttributes) =
+        +attribute.joinToString(" ") {
+            it.attributeName
+        }
 }
+
+fun HtmxMethods.disinherit(lambda: HxDisinherit.() -> Unit) = addEntry(HxDisinherit(), lambda)
