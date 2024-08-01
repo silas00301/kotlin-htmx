@@ -1,31 +1,21 @@
 package dev.silash.kotlinHtmx.attributes.htmx
 
+import dev.silash.kotlinHtmx.HtmxMethods
 import dev.silash.kotlinHtmx.attributes.HtmlAttribute
 
 class HxSync : HtmlAttribute("hx-sync") {
-    fun target(target: HxTarget.() -> Unit) {
-        val hxTargetClass = HxTarget()
-        hxTargetClass.target()
-        val text = hxTargetClass.attributeText.trimEnd()
-        +"$text:"
-    }
+    fun target(target: HxTarget.() -> Unit) =
+        HxTarget().apply(target).attributeText.let {
+            +"${it.trimEnd()}:"
+        }
 
-    fun drop() {
-        +"drop"
-    }
+    fun drop() = +"drop"
 
-    fun abort() {
-        +"abort"
-    }
+    fun abort() = +"abort"
 
-    fun replace() {
-        +"replace"
-    }
+    fun replace() = +"replace"
 
-    fun queue(method: QueueMethods) {
-        val methodName = method.name.lowercase()
-        +"queue $methodName"
-    }
+    fun queue(method: QueueMethods) = +"queue ${method.name.lowercase()}"
 
     enum class QueueMethods {
         FIRST,
@@ -33,3 +23,5 @@ class HxSync : HtmlAttribute("hx-sync") {
         ALL,
     }
 }
+
+fun HtmxMethods.sync(lambda: HxSync.() -> Unit) = addEntry(HxSync(), lambda)

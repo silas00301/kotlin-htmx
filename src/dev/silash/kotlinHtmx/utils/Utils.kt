@@ -13,3 +13,7 @@ fun generateWhereSelector(selector: String): String {
     }
     return "[$selector]"
 }
+
+fun String.containsUpperCase() = any { it.isUpperCase() }
+
+fun String.containsLowerCase() = any { it.isLowerCase() }
