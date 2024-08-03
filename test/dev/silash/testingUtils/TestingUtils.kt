@@ -7,6 +7,6 @@ infix fun Any?.assertIsEqualTo(expected: Any?) {
     assertEquals(expected, this)
 }
 
-fun <T> Iterable<T>.assertContains(expected: T?) {
+infix fun <T> Iterable<T>.assertContains(expected: T?) {
     assertContains(this, expected)
 }

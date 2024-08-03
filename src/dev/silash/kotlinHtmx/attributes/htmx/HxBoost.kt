@@ -5,4 +5,4 @@ import dev.silash.kotlinHtmx.attributes.HtmlAttribute
 
 class HxBoost(enabled: Boolean) : HtmlAttribute("hx-boost", enabled.toString())
 
-fun HtmxMethods.boost(enabled: Boolean) = addEntry(HxBoost(enabled))
+fun HtmxMethods.boost(enabled: Boolean = true) = addEntry(HxBoost(enabled))
