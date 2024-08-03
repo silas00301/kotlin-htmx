@@ -14,7 +14,7 @@ class HxParamsTest : AttributeBaseTest() {
                 append("this,closest,div,find,next,next div,previous,previous div,[id='example']")
             }
 
-        htmxMethods.params {
+        htmxHtmlAttributes.params {
             all()
             none()
             except("this", "closest", "div", "find", "span", "next", "next div", "previous", "previous div")

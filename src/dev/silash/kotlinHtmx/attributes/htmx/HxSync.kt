@@ -1,6 +1,6 @@
 package dev.silash.kotlinHtmx.attributes.htmx
 
-import dev.silash.kotlinHtmx.HtmxMethods
+import dev.silash.kotlinHtmx.HtmxHtmlAttributes
 import dev.silash.kotlinHtmx.attributes.HtmlAttribute
 
 class HxSync : HtmlAttribute("hx-sync") {
@@ -24,4 +24,4 @@ class HxSync : HtmlAttribute("hx-sync") {
     }
 }
 
-fun HtmxMethods.sync(lambda: HxSync.() -> Unit) = addEntry(HxSync(), lambda)
+fun HtmxHtmlAttributes.sync(lambda: HxSync.() -> Unit) = addEntry(HxSync(), lambda)

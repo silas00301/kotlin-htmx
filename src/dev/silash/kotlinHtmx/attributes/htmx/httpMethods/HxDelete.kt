@@ -1,6 +1,6 @@
 package dev.silash.kotlinHtmx.attributes.htmx.httpMethods
 
-import dev.silash.kotlinHtmx.HtmxMethods
+import dev.silash.kotlinHtmx.HtmxHtmlAttributes
 import dev.silash.kotlinHtmx.attributes.HtmlAttribute
 
 class HxDelete(val url: String) : HtmlAttribute("hx-delete") {
@@ -9,4 +9,4 @@ class HxDelete(val url: String) : HtmlAttribute("hx-delete") {
     }
 }
 
-fun HtmxMethods.delete(url: String) = addEntry(HxDelete(url))
+fun HtmxHtmlAttributes.delete(url: String) = addEntry(HxDelete(url))

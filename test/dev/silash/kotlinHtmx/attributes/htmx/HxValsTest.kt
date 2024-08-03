@@ -19,7 +19,7 @@ class HxValsTest : AttributeBaseTest() {
                 append("}")
             }
 
-        htmxMethods.vals {
+        htmxHtmlAttributes.vals {
             normal { add("key1", "value1") }
             js { add("key1", "value1") }
             +","

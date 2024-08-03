@@ -19,7 +19,7 @@ class HxInheritTest : AttributeBaseTest() {
                 append("hx-on")
             }
 
-        htmxMethods.inherit {
+        htmxHtmlAttributes.inherit {
             all()
             select(HISTORY, DISINHERIT, SELECT, ON)
         }

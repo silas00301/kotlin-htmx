@@ -13,7 +13,7 @@ class HxPushUrlTest : AttributeBaseTest() {
                 append("https://example.com")
             }
 
-        htmxMethods.pushUrl {
+        htmxHtmlAttributes.pushUrl {
             pushToHistory()
             notPushToHistory()
             url("https://example.com")

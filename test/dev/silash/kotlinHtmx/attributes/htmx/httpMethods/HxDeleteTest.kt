@@ -8,7 +8,7 @@ class HxDeleteTest : AttributeBaseTest() {
     fun deleteTest() {
         val expected = "https://example.com"
 
-        htmxMethods.delete(expected)
+        htmxHtmlAttributes.delete(expected)
 
         assertAttribute("hx-delete", expected)
     }

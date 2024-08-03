@@ -18,7 +18,7 @@ class HxSyncTest : AttributeBaseTest() {
                 append("queue all")
             }
 
-        htmxMethods.sync {
+        htmxHtmlAttributes.sync {
             target {
                 `this`()
                 closest("div")

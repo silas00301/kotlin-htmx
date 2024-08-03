@@ -1,6 +1,6 @@
 package dev.silash.kotlinHtmx.attributes.htmx
 
-import dev.silash.kotlinHtmx.HtmxMethods
+import dev.silash.kotlinHtmx.HtmxHtmlAttributes
 import dev.silash.kotlinHtmx.attributes.HtmlAttribute
 import dev.silash.kotlinHtmx.utils.generateWhereSelector
 
@@ -24,4 +24,4 @@ class HxDisabledElt : HtmlAttribute("hx-disabled-elt") {
     fun where(selector: String) = +generateWhereSelector(selector)
 }
 
-fun HtmxMethods.disabledElt(lambda: HxDisabledElt.() -> Unit) = addEntry(HxDisabledElt(), lambda)
+fun HtmxHtmlAttributes.disabledElt(lambda: HxDisabledElt.() -> Unit) = addEntry(HxDisabledElt(), lambda)

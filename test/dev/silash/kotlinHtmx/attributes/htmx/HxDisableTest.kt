@@ -6,7 +6,7 @@ import kotlin.test.Test
 class HxDisableTest : AttributeBaseTest() {
     @Test
     fun disableTest() {
-        htmxMethods.disable()
+        htmxHtmlAttributes.disable()
 
         assertAttribute("hx-disable")
     }

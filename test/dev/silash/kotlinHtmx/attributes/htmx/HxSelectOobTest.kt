@@ -18,7 +18,7 @@ class HxSelectOobTest : AttributeBaseTest() {
                 append(":outerHTML")
             }
 
-        htmxMethods.selectOob {
+        htmxHtmlAttributes.selectOob {
             select {
                 element("div")
                 where("id" to "example")

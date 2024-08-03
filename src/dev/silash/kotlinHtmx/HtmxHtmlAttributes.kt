@@ -2,7 +2,7 @@ package dev.silash.kotlinHtmx
 
 import dev.silash.kotlinHtmx.attributes.HtmlAttribute
 
-class HtmxMethods(val map: MutableMap<String, String>) {
+class HtmxHtmlAttributes(val map: MutableMap<String, String>) {
     inline fun <T : HtmlAttribute> addEntry(
         instance: T,
         lambda: T.() -> Unit = {},

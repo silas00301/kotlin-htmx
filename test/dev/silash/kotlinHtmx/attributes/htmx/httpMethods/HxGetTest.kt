@@ -8,7 +8,7 @@ class HxGetTest : AttributeBaseTest() {
     fun getTest() {
         val expected = "https://example.com"
 
-        htmxMethods.get(expected)
+        htmxHtmlAttributes.get(expected)
 
         assertAttribute("hx-get", expected)
     }

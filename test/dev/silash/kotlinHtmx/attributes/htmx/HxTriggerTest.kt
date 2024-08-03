@@ -37,7 +37,7 @@ class HxTriggerTest : AttributeBaseTest() {
                 append("every 1000ms")
             }
 
-        htmxMethods.trigger {
+        htmxHtmlAttributes.trigger {
             event {
                 click()
                 filter("test")
@@ -74,7 +74,7 @@ class HxTriggerTest : AttributeBaseTest() {
         assertFailsWith<IllegalArgumentException>(
             message = "Threshold must be between 0 and 1",
         ) {
-            htmxMethods.trigger {
+            htmxHtmlAttributes.trigger {
                 event {
                     modifiers {
                         intersect {

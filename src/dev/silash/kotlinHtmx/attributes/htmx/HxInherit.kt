@@ -1,6 +1,5 @@
 package dev.silash.kotlinHtmx.attributes.htmx
 
-import dev.silash.kotlinHtmx.HtmxMethods
 import dev.silash.kotlinHtmx.attributes.HtmlAttribute
 import dev.silash.kotlinHtmx.enums.HtmxAttributes
 import dev.silash.kotlinHtmx.enums.attributeName
@@ -14,4 +13,4 @@ class HxInherit : HtmlAttribute("hx-inherit") {
         }
 }
 
-fun HtmxMethods.inherit(lambda: HxInherit.() -> Unit) = addEntry(HxInherit(), lambda)
+fun dev.silash.kotlinHtmx.HtmxHtmlAttributes.inherit(lambda: HxInherit.() -> Unit) = addEntry(HxInherit(), lambda)

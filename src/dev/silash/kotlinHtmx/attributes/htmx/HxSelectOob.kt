@@ -1,6 +1,6 @@
 package dev.silash.kotlinHtmx.attributes.htmx
 
-import dev.silash.kotlinHtmx.HtmxMethods
+import dev.silash.kotlinHtmx.HtmxHtmlAttributes
 import dev.silash.kotlinHtmx.attributes.HtmlAttribute
 import dev.silash.kotlinHtmx.utils.generateWhereSelector
 
@@ -27,4 +27,4 @@ class HxSelectOob : HtmlAttribute("hx-select-oob") {
     }
 }
 
-fun HtmxMethods.selectOob(lambda: HxSelectOob.() -> Unit) = addEntry(HxSelectOob(), lambda)
+fun HtmxHtmlAttributes.selectOob(lambda: HxSelectOob.() -> Unit) = addEntry(HxSelectOob(), lambda)

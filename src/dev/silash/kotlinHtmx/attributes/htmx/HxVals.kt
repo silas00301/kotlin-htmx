@@ -1,6 +1,6 @@
 package dev.silash.kotlinHtmx.attributes.htmx
 
-import dev.silash.kotlinHtmx.HtmxMethods
+import dev.silash.kotlinHtmx.HtmxHtmlAttributes
 import dev.silash.kotlinHtmx.attributes.HtmlAttribute
 
 class HxVals : HtmlAttribute("hx-vals") {
@@ -23,4 +23,4 @@ class HxVals : HtmlAttribute("hx-vals") {
     }
 }
 
-fun HtmxMethods.vals(lambda: HxVals.() -> Unit) = addEntry(HxVals(), lambda)
+fun HtmxHtmlAttributes.vals(lambda: HxVals.() -> Unit) = addEntry(HxVals(), lambda)

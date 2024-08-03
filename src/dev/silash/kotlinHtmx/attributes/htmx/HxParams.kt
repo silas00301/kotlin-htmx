@@ -1,6 +1,6 @@
 package dev.silash.kotlinHtmx.attributes.htmx
 
-import dev.silash.kotlinHtmx.HtmxMethods
+import dev.silash.kotlinHtmx.HtmxHtmlAttributes
 import dev.silash.kotlinHtmx.attributes.HtmlAttribute
 
 class HxParams : HtmlAttribute("hx-params") {
@@ -13,4 +13,4 @@ class HxParams : HtmlAttribute("hx-params") {
     fun only(vararg params: String) = +params.joinToString(",")
 }
 
-fun HtmxMethods.params(lambda: HxParams.() -> Unit) = addEntry(HxParams(), lambda)
+fun HtmxHtmlAttributes.params(lambda: HxParams.() -> Unit) = addEntry(HxParams(), lambda)
