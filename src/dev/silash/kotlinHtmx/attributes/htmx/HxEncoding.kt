@@ -2,6 +2,7 @@ package dev.silash.kotlinHtmx.attributes.htmx
 
 import dev.silash.kotlinHtmx.HtmxMethods
 import dev.silash.kotlinHtmx.attributes.HtmlAttribute
+import dev.silash.kotlinHtmx.attributes.htmx.HxEncodingOptions.MULTIPART_FORM_DATA
 
 class HxEncoding(option: HxEncodingOptions) : HtmlAttribute("hx-encoding", option.htmxName)
 
@@ -12,8 +13,8 @@ enum class HxEncodingOptions {
 val HxEncodingOptions.htmxName: String
     get() {
         when (this) {
-            HxEncodingOptions.MULTIPART_FORM_DATA -> return "multipart/form-data"
+            MULTIPART_FORM_DATA -> return "multipart/form-data"
         }
     }
 
-fun HtmxMethods.encoding(encoding: HxEncodingOptions) = addEntry(HxEncoding(encoding))
+fun HtmxMethods.encoding(encoding: HxEncodingOptions = MULTIPART_FORM_DATA) = addEntry(HxEncoding(encoding))

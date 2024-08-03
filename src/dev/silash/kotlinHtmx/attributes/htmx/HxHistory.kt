@@ -5,4 +5,4 @@ import dev.silash.kotlinHtmx.attributes.HtmlAttribute
 
 class HxHistory(enabled: Boolean) : HtmlAttribute("hx-history", enabled.toString())
 
-fun HtmxMethods.history(enabled: Boolean) = addEntry(HxHistory(enabled))
+fun HtmxMethods.history(enabled: Boolean = false) = addEntry(HxHistory(enabled))
