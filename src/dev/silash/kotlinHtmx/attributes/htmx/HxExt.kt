@@ -1,6 +1,6 @@
 package dev.silash.kotlinHtmx.attributes.htmx
 
-import dev.silash.kotlinHtmx.HtmxMethods
+import dev.silash.kotlinHtmx.HtmxHtmlAttributes
 import dev.silash.kotlinHtmx.attributes.HtmlAttribute
 
 class HxExt : HtmlAttribute("hx-ext") {
@@ -12,4 +12,4 @@ class HxExt : HtmlAttribute("hx-ext") {
         }
 }
 
-fun HtmxMethods.ext(lambda: HxExt.() -> Unit) = addEntry(HxExt(), lambda)
+fun HtmxHtmlAttributes.ext(lambda: HxExt.() -> Unit) = addEntry(HxExt(), lambda)

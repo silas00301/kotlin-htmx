@@ -6,7 +6,7 @@ import kotlin.test.Test
 class HxPreserveTest : AttributeBaseTest() {
     @Test
     fun preserveTest() {
-        htmxMethods.preserve()
+        htmxHtmlAttributes.preserve()
 
         assertAttribute("hx-preserve")
     }

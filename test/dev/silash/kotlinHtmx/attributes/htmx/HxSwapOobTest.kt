@@ -14,7 +14,7 @@ class HxSwapOobTest : AttributeBaseTest() {
                 append("[id='example']")
             }
 
-        htmxMethods.swapOob {
+        htmxHtmlAttributes.swapOob {
             trueSwap()
             swap {
                 element("div")

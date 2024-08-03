@@ -1,6 +1,6 @@
 package dev.silash.kotlinHtmx.attributes.htmx
 
-import dev.silash.kotlinHtmx.HtmxMethods
+import dev.silash.kotlinHtmx.HtmxHtmlAttributes
 import dev.silash.kotlinHtmx.attributes.HtmlAttribute
 import kotlin.time.Duration
 
@@ -83,4 +83,4 @@ class HxTrigger : HtmlAttribute("hx-trigger") {
     }
 }
 
-fun HtmxMethods.trigger(lambda: HxTrigger.() -> Unit) = addEntry(HxTrigger(), lambda)
+fun HtmxHtmlAttributes.trigger(lambda: HxTrigger.() -> Unit) = addEntry(HxTrigger(), lambda)

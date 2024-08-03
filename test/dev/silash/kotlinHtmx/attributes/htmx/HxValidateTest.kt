@@ -6,7 +6,7 @@ import kotlin.test.Test
 class HxValidateTest : AttributeBaseTest() {
     @Test
     fun validateTest() {
-        htmxMethods.validate()
+        htmxHtmlAttributes.validate()
 
         assertAttribute("hx-validate")
     }

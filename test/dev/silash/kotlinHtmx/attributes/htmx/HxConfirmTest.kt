@@ -8,7 +8,7 @@ class HxConfirmTest : AttributeBaseTest() {
     fun confirmTest() {
         val expected = "Are you sure?"
 
-        htmxMethods.confirm(expected)
+        htmxHtmlAttributes.confirm(expected)
 
         assertAttribute("hx-confirm", expected)
     }

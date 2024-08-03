@@ -13,7 +13,7 @@ class HxIndicatorTest : AttributeBaseTest() {
                 append("[id='example']")
             }
 
-        htmxMethods.indicator {
+        htmxHtmlAttributes.indicator {
             closest("div")
             where("id" to "example")
             where("id='example'")

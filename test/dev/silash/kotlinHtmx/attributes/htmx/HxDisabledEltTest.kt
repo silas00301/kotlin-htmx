@@ -19,7 +19,7 @@ class HxDisabledEltTest : AttributeBaseTest() {
                 append("[id='example']")
             }
 
-        htmxMethods.disabledElt {
+        htmxHtmlAttributes.disabledElt {
             `this`()
             closest("div")
             find("span")

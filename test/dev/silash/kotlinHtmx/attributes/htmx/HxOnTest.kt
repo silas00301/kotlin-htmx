@@ -11,10 +11,10 @@ class HxOnTest : AttributeBaseTest() {
         val expectedHtmx = "console.log('Hello World!')"
         val expectedStandard = "console.log('Hello World!')"
 
-        htmxMethods.on(HtmxEvent("click")) {
+        htmxHtmlAttributes.on(HtmxEvent("click")) {
             execute("console.log('Hello World!')")
         }
-        htmxMethods.on(StandardEvent("test")) {
+        htmxHtmlAttributes.on(StandardEvent("test")) {
             execute("console.log('Hello World!')")
         }
 

@@ -8,7 +8,7 @@ class HxPatchTest : AttributeBaseTest() {
     fun patchTest() {
         val expected = "https://example.com"
 
-        htmxMethods.patch(expected)
+        htmxHtmlAttributes.patch(expected)
 
         assertAttribute("hx-patch", expected)
     }

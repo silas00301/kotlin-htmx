@@ -1,6 +1,6 @@
 package dev.silash.kotlinHtmx.attributes.htmx
 
-import dev.silash.kotlinHtmx.HtmxMethods
+import dev.silash.kotlinHtmx.HtmxHtmlAttributes
 import dev.silash.kotlinHtmx.attributes.HtmlAttribute
 import kotlin.time.Duration
 
@@ -55,4 +55,4 @@ class HxSwap : HtmlAttribute("hx-swap") {
     }
 }
 
-fun HtmxMethods.swap(lambda: HxSwap.() -> Unit) = addEntry(HxSwap(), lambda)
+fun HtmxHtmlAttributes.swap(lambda: HxSwap.() -> Unit) = addEntry(HxSwap(), lambda)

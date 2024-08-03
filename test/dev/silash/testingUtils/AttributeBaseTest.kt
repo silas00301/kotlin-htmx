@@ -1,11 +1,11 @@
 package dev.silash.testingUtils
 
-import dev.silash.kotlinHtmx.HtmxMethods
+import dev.silash.kotlinHtmx.HtmxHtmlAttributes
 import kotlin.test.AfterTest
 
 abstract class AttributeBaseTest {
     private val map = mutableMapOf<String, String>()
-    val htmxMethods = HtmxMethods(map)
+    val htmxHtmlAttributes = HtmxHtmlAttributes(map)
 
     @AfterTest
     fun cleanup() {

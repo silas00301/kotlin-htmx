@@ -8,7 +8,7 @@ class HxBoostTest : AttributeBaseTest() {
     fun boostTest() {
         val expected = "true"
 
-        htmxMethods.boost()
+        htmxHtmlAttributes.boost()
 
         assertAttribute("hx-boost", expected)
     }

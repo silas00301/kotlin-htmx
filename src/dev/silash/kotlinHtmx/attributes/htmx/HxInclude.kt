@@ -1,6 +1,6 @@
 package dev.silash.kotlinHtmx.attributes.htmx
 
-import dev.silash.kotlinHtmx.HtmxMethods
+import dev.silash.kotlinHtmx.HtmxHtmlAttributes
 import dev.silash.kotlinHtmx.attributes.HtmlAttribute
 import dev.silash.kotlinHtmx.utils.generateWhereSelector
 
@@ -28,4 +28,4 @@ class HxInclude : HtmlAttribute("hx-include") {
     fun where(selector: String) = +generateWhereSelector(selector)
 }
 
-fun HtmxMethods.include(lambda: HxInclude.() -> Unit) = addEntry(HxInclude(), lambda)
+fun HtmxHtmlAttributes.include(lambda: HxInclude.() -> Unit) = addEntry(HxInclude(), lambda)

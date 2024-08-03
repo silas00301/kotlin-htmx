@@ -8,7 +8,7 @@ class HxPutTest : AttributeBaseTest() {
     fun putTest() {
         val expected = "https://example.com"
 
-        htmxMethods.put(expected)
+        htmxHtmlAttributes.put(expected)
 
         assertAttribute("hx-put", expected)
     }

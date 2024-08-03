@@ -1,6 +1,6 @@
 package dev.silash.kotlinHtmx.attributes.htmx
 
-import dev.silash.kotlinHtmx.HtmxMethods
+import dev.silash.kotlinHtmx.HtmxHtmlAttributes
 import dev.silash.kotlinHtmx.attributes.HtmlAttribute
 import dev.silash.kotlinHtmx.events.Event
 import dev.silash.kotlinHtmx.events.HtmxEvent
@@ -18,7 +18,7 @@ class HxOn(event: Event) : HtmlAttribute("hx-on") {
     fun execute(action: String) = +action
 }
 
-fun HtmxMethods.on(
+fun HtmxHtmlAttributes.on(
     event: Event,
     lambda: HxOn.() -> Unit,
 ) = addEntry(HxOn(event), lambda)

@@ -20,7 +20,7 @@ class HxTargetTest : AttributeBaseTest() {
                 append("[id='example']")
             }
 
-        htmxMethods.target {
+        htmxHtmlAttributes.target {
             `this`()
             closest("div")
             find("span")

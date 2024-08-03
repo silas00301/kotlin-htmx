@@ -6,7 +6,7 @@ import kotlin.test.Test
 class HxHistoryTest : AttributeBaseTest() {
     @Test
     fun historyTest() {
-        htmxMethods.history()
+        htmxHtmlAttributes.history()
 
         assertAttribute("hx-history", "false")
     }

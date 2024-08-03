@@ -8,7 +8,7 @@ class HxExtTest : AttributeBaseTest() {
     fun extTest() {
         val expected = "text test ignore:text ignore:test"
 
-        htmxMethods.ext {
+        htmxHtmlAttributes.ext {
             add("text", "test")
             ignore("text", "test")
         }

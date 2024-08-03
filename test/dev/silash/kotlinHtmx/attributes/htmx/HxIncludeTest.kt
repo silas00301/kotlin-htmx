@@ -20,7 +20,7 @@ class HxIncludeTest : AttributeBaseTest() {
                 append("[id='example']")
             }
 
-        htmxMethods.include {
+        htmxHtmlAttributes.include {
             `this`()
             closest("div")
             find("span")

@@ -1,6 +1,6 @@
 package dev.silash.kotlinHtmx.attributes.htmx
 
-import dev.silash.kotlinHtmx.HtmxMethods
+import dev.silash.kotlinHtmx.HtmxHtmlAttributes
 import dev.silash.kotlinHtmx.attributes.HtmlAttribute
 
 class HxPushUrl : HtmlAttribute("hx-push-url") {
@@ -11,4 +11,4 @@ class HxPushUrl : HtmlAttribute("hx-push-url") {
     fun url(url: String) = +url
 }
 
-fun HtmxMethods.pushUrl(lambda: HxPushUrl.() -> Unit) = addEntry(HxPushUrl(), lambda)
+fun HtmxHtmlAttributes.pushUrl(lambda: HxPushUrl.() -> Unit) = addEntry(HxPushUrl(), lambda)

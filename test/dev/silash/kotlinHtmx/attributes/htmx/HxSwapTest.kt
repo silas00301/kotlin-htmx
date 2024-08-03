@@ -30,7 +30,7 @@ class HxSwapTest : AttributeBaseTest() {
                 append("focus-show:true")
             }
 
-        htmxMethods.swap {
+        htmxHtmlAttributes.swap {
             innerHtml()
             outerHtml()
             textContent()

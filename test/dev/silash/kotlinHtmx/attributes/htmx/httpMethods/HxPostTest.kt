@@ -8,7 +8,7 @@ class HxPostTest : AttributeBaseTest() {
     fun postTest() {
         val expected = "https://example.com"
 
-        htmxMethods.post(expected)
+        htmxHtmlAttributes.post(expected)
 
         assertAttribute("hx-post", expected)
     }

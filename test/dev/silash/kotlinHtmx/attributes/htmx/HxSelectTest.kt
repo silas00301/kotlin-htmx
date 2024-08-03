@@ -12,7 +12,7 @@ class HxSelectTest : AttributeBaseTest() {
                 append("[id='example']")
             }
 
-        htmxMethods.select {
+        htmxHtmlAttributes.select {
             where("id" to "example")
             where("id='example'")
         }

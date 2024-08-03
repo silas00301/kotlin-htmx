@@ -1,6 +1,6 @@
 package dev.silash.kotlinHtmx.attributes.htmx
 
-import dev.silash.kotlinHtmx.HtmxMethods
+import dev.silash.kotlinHtmx.HtmxHtmlAttributes
 import dev.silash.kotlinHtmx.attributes.HtmlAttribute
 import dev.silash.kotlinHtmx.utils.generateWhereSelector
 
@@ -24,4 +24,4 @@ class HxSwapOob : HtmlAttribute("hx-swap-oob") {
     }
 }
 
-fun HtmxMethods.swapOob(lambda: HxSwapOob.() -> Unit) = addEntry(HxSwapOob(), lambda)
+fun HtmxHtmlAttributes.swapOob(lambda: HxSwapOob.() -> Unit) = addEntry(HxSwapOob(), lambda)
