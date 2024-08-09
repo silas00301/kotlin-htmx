@@ -1,7 +1,7 @@
 package dev.silash.kotlinHtmx.attributes.htmx
 
-import dev.silash.kotlinHtmx.HtmxHtmlAttributes
 import dev.silash.kotlinHtmx.attributes.HtmlAttribute
+import dev.silash.kotlinHtmx.attributes.HtmxHtmlAttributes
 
 class HxVals : HtmlAttribute("hx-vals") {
     fun normal(strategy: HxValsMap.() -> Unit) = +generateValsMap(strategy)

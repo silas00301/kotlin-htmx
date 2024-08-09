@@ -1,4 +1,4 @@
-package dev.silash.kotlinHtmx
+package dev.silash.kotlinHtmx.cssClasses
 
 import dev.silash.kotlinHtmx.cssClasses.htmx.added
 import dev.silash.kotlinHtmx.cssClasses.htmx.indicator
@@ -9,7 +9,7 @@ import dev.silash.testingUtils.assertIsEqualTo
 import kotlin.test.AfterTest
 import kotlin.test.Test
 
-class HtmxClassesTest {
+class HtmxCSSClassesTest {
     private val list = mutableListOf<String>()
 
     private val cut = HtmxCSSClasses(list)

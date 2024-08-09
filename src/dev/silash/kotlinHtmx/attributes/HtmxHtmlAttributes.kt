@@ -1,6 +1,4 @@
-package dev.silash.kotlinHtmx
-
-import dev.silash.kotlinHtmx.attributes.HtmlAttribute
+package dev.silash.kotlinHtmx.attributes
 
 class HtmxHtmlAttributes(val map: MutableMap<String, String>) {
     inline fun <T : HtmlAttribute> addEntry(

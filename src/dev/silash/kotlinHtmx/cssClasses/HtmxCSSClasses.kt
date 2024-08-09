@@ -1,6 +1,4 @@
-package dev.silash.kotlinHtmx
-
-import dev.silash.kotlinHtmx.cssClasses.CSSClass
+package dev.silash.kotlinHtmx.cssClasses
 
 class HtmxCSSClasses(val classList: MutableList<String> = mutableListOf()) {
     inline fun addEntry(cssClass: CSSClass) {

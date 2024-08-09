@@ -5,7 +5,7 @@ import kotlin.test.Test
 
 class HtmxAttributesTest {
     @Test
-    fun htmxAttributesToHtmxAttributeTest() {
+    fun htmxAttributesAttributeNameTest() {
         val htmxAttributes = HtmxAttributes.entries.map { it.attributeName }
         with(htmxAttributes) {
             assertContains("hx-get")
