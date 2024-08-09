@@ -1,7 +1,7 @@
 package dev.silash.kotlinHtmx.attributes.htmx
 
-import dev.silash.kotlinHtmx.HtmxHtmlAttributes
 import dev.silash.kotlinHtmx.attributes.HtmlAttribute
+import dev.silash.kotlinHtmx.attributes.HtmxHtmlAttributes
 import dev.silash.kotlinHtmx.events.Event
 import dev.silash.kotlinHtmx.events.HtmxEvent
 import dev.silash.kotlinHtmx.events.StandardEvent

@@ -1,6 +1,6 @@
 package dev.silash.testingUtils
 
-import dev.silash.kotlinHtmx.HtmxHtmlAttributes
+import dev.silash.kotlinHtmx.attributes.HtmxHtmlAttributes
 import kotlin.test.AfterTest
 
 abstract class AttributeBaseTest {

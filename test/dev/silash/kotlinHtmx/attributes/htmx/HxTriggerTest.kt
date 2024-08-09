@@ -70,7 +70,7 @@ class HxTriggerTest : AttributeBaseTest() {
     }
 
     @Test
-    fun `threshold should throw IllegalArgumentException if value not between 0 and 1`() {
+    fun `threshold should throw IllegalArgumentException if value over 1`() {
         assertFailsWith<IllegalArgumentException>(
             message = "Threshold must be between 0 and 1",
         ) {
@@ -79,6 +79,23 @@ class HxTriggerTest : AttributeBaseTest() {
                     modifiers {
                         intersect {
                             threshold(1.5)
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @Test
+    fun `threshold should throw IllegalArgumentException if value under 0`() {
+        assertFailsWith<IllegalArgumentException>(
+            message = "Threshold must be between 0 and 1",
+        ) {
+            htmxHtmlAttributes.trigger {
+                event {
+                    modifiers {
+                        intersect {
+                            threshold(-0.5)
                         }
                     }
                 }

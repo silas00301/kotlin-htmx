@@ -1,7 +1,7 @@
 package dev.silash.kotlinHtmx.attributes.htmx
 
-import dev.silash.kotlinHtmx.HtmxHtmlAttributes
 import dev.silash.kotlinHtmx.attributes.HtmlAttribute
+import dev.silash.kotlinHtmx.attributes.HtmxHtmlAttributes
 
 class HxSync : HtmlAttribute("hx-sync") {
     fun target(target: HxTarget.() -> Unit) =

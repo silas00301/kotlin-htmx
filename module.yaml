@@ -6,11 +6,10 @@ product:
     - mingwX64
 
 settings:
-  jvm:
-    target: 17
   kotlin:
     languageFeatures:
       - contextReceivers
   publishing:
     group: dev.silash
+    name: kotlin-htmx
     version: 0.1.0
