@@ -1,7 +1,6 @@
 package dev.silash.kotlinHtmx.attributes.htmx
 
-import dev.silash.kotlinHtmx.events.HtmxEvent
-import dev.silash.kotlinHtmx.events.StandardEvent
+import dev.silash.kotlinHtmx.enums.HtmxEvents.PROMPT
 import dev.silash.testingUtils.AttributeBaseTest
 import kotlin.test.Test
 
@@ -11,14 +10,14 @@ class HxOnTest : AttributeBaseTest() {
         val expectedHtmx = "console.log('Hello World!')"
         val expectedStandard = "console.log('Hello World!')"
 
-        htmxHtmlAttributes.on(HtmxEvent("click")) {
+        htmxHtmlAttributes.on(PROMPT) {
             execute("console.log('Hello World!')")
         }
-        htmxHtmlAttributes.on(StandardEvent("test")) {
+        htmxHtmlAttributes.on("click") {
             execute("console.log('Hello World!')")
         }
 
-        assertAttribute("hx-on::click", expectedHtmx)
-        assertAttribute("hx-on:test", expectedStandard)
+        assertAttribute("hx-on:htmx:prompt", expectedHtmx)
+        assertAttribute("hx-on:click", expectedStandard)
     }
 }
