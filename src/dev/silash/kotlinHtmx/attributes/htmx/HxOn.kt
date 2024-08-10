@@ -2,23 +2,24 @@ package dev.silash.kotlinHtmx.attributes.htmx
 
 import dev.silash.kotlinHtmx.attributes.HtmlAttribute
 import dev.silash.kotlinHtmx.attributes.HtmxHtmlAttributes
-import dev.silash.kotlinHtmx.events.Event
-import dev.silash.kotlinHtmx.events.HtmxEvent
-import dev.silash.kotlinHtmx.events.StandardEvent
+import dev.silash.kotlinHtmx.enums.HtmxEvents
+import dev.silash.kotlinHtmx.enums.eventName
 
-class HxOn(event: Event) : HtmlAttribute("hx-on") {
+class HxOn(event: String) : HtmlAttribute("hx-on") {
     init {
-        attributeName +=
-            when (event) {
-                is StandardEvent -> ":${event.event}"
-                is HtmxEvent -> "::${event.event}"
-            }
+        event.trimStart(':')
+        attributeName += ":$event"
     }
 
     fun execute(action: String) = +action
 }
 
 fun HtmxHtmlAttributes.on(
-    event: Event,
+    event: String,
     lambda: HxOn.() -> Unit,
 ) = addEntry(HxOn(event), lambda)
+
+fun HtmxHtmlAttributes.on(
+    event: HtmxEvents,
+    lambda: HxOn.() -> Unit,
+) = addEntry(HxOn(event.eventName), lambda)
