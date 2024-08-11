@@ -2,6 +2,15 @@ package dev.silash.kotlinHtmx.attributes.htmx
 
 import dev.silash.kotlinHtmx.attributes.htmx.HxSwap.HxScrollDirection
 import dev.silash.kotlinHtmx.attributes.htmx.HxSwap.HxShowDirection
+import dev.silash.kotlinHtmx.enums.HtmxSwapStyles.AFTER_BEGIN
+import dev.silash.kotlinHtmx.enums.HtmxSwapStyles.AFTER_END
+import dev.silash.kotlinHtmx.enums.HtmxSwapStyles.BEFORE_BEGIN
+import dev.silash.kotlinHtmx.enums.HtmxSwapStyles.BEFORE_END
+import dev.silash.kotlinHtmx.enums.HtmxSwapStyles.DELETE
+import dev.silash.kotlinHtmx.enums.HtmxSwapStyles.INNER_HTML
+import dev.silash.kotlinHtmx.enums.HtmxSwapStyles.NONE
+import dev.silash.kotlinHtmx.enums.HtmxSwapStyles.OUTER_HTML
+import dev.silash.kotlinHtmx.enums.HtmxSwapStyles.TEXT_CONTENT
 import dev.silash.testingUtils.AttributeBaseTest
 import kotlin.test.Test
 import kotlin.time.Duration.Companion.milliseconds
@@ -31,15 +40,15 @@ class HxSwapTest : AttributeBaseTest() {
             }
 
         htmxHtmlAttributes.swap {
-            innerHtml()
-            outerHtml()
-            textContent()
-            beforeBegin()
-            afterBegin()
-            beforeEnd()
-            afterEnd()
-            delete()
-            none()
+            style(INNER_HTML)
+            style(OUTER_HTML)
+            style(TEXT_CONTENT)
+            style(BEFORE_BEGIN)
+            style(AFTER_BEGIN)
+            style(BEFORE_END)
+            style(AFTER_END)
+            style(DELETE)
+            style(NONE)
             swap(1.seconds)
             settle(1.milliseconds)
             ignoreTitle()

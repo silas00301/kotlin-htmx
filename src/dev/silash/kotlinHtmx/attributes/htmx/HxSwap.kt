@@ -2,27 +2,13 @@ package dev.silash.kotlinHtmx.attributes.htmx
 
 import dev.silash.kotlinHtmx.attributes.HtmlAttribute
 import dev.silash.kotlinHtmx.attributes.HtmxHtmlAttributes
+import dev.silash.kotlinHtmx.enums.HtmxSwapStyles
+import dev.silash.kotlinHtmx.enums.styleName
 import kotlin.time.Duration
 
 @Suppress("TooManyFunctions")
 class HxSwap : HtmlAttribute("hx-swap") {
-    fun innerHtml() = +"innerHTML"
-
-    fun outerHtml() = +"outerHTML"
-
-    fun textContent() = +"textContent"
-
-    fun beforeBegin() = +"beforebegin"
-
-    fun afterBegin() = +"afterbegin"
-
-    fun beforeEnd() = +"beforeend"
-
-    fun afterEnd() = +"afterend"
-
-    fun delete() = +"delete"
-
-    fun none() = +"none"
+    fun style(style: HtmxSwapStyles) = +style.styleName
 
     fun swap(time: Duration) = +"swap:${time.inWholeMilliseconds}ms"
 

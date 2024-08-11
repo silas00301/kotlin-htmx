@@ -88,4 +88,22 @@ class UtilsTest {
 
         actual assertIsEqualTo expected
     }
+
+    @Test
+    fun stringPrependTest() {
+        val expected = "prefixString"
+
+        val actual = "String".prepend("prefix")
+
+        actual assertIsEqualTo expected
+    }
+
+    @Test
+    fun stringAppendTest() {
+        val expected = "StringSuffix"
+
+        val actual = "String".append("Suffix")
+
+        actual assertIsEqualTo expected
+    }
 }
