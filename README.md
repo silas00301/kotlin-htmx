@@ -6,7 +6,7 @@ attributes and configuration.
 # Usage
 
 As the goal of this library is to be usable with any Kotlin web framework, it does not provide any specific integration.
-Instead, it provides a few code snippets that can have to be integrated into your project.
+Instead, it provides a few code snippets that have to be integrated into your project.
 
 - [kotlinx-html](#kotlinx-html)
 
