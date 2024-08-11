@@ -1,8 +1,8 @@
 product:
   type: lib
   platforms:
-    - linuxX64
     - jvm
+    - linuxX64
     - mingwX64
 
 settings:
@@ -12,4 +12,4 @@ settings:
   publishing:
     group: dev.silash
     name: kotlin-htmx
-    version: 0.1.0
+    version: 0.2.0
