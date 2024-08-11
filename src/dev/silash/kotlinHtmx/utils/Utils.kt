@@ -17,3 +17,7 @@ fun generateWhereSelector(selector: String): String {
 fun String.containsUpperCase() = any { it.isUpperCase() }
 
 fun String.containsLowerCase() = any { it.isLowerCase() }
+
+fun String.prepend(prefix: String) = "$prefix$this"
+
+fun String.append(suffix: String) = "$this$suffix"

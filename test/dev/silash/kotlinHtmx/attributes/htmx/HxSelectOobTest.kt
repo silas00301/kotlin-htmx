@@ -1,5 +1,7 @@
 package dev.silash.kotlinHtmx.attributes.htmx
 
+import dev.silash.kotlinHtmx.enums.HtmxSwapStyles.INNER_HTML
+import dev.silash.kotlinHtmx.enums.HtmxSwapStyles.OUTER_HTML
 import dev.silash.testingUtils.AttributeBaseTest
 import kotlin.test.Test
 
@@ -24,7 +26,7 @@ class HxSelectOobTest : AttributeBaseTest() {
                 where("id" to "example")
                 where("id='example'")
                 strategy {
-                    innerHtml()
+                    style(INNER_HTML)
                 }
             }
             select {
@@ -32,7 +34,7 @@ class HxSelectOobTest : AttributeBaseTest() {
                 where("id" to "example")
                 where("id='example'")
                 strategy {
-                    outerHtml()
+                    style(OUTER_HTML)
                 }
             }
         }
